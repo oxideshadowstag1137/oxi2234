@@ -1,0 +1,10 @@
+device STM32F103C8
+si SWD
+speed 4000
+connect
+h
+loadfile "D:\LADI\MSU FIRMWARE\build_output\bootloader_data.bin" 0x0800E000
+verifybin "D:\LADI\MSU FIRMWARE\build_output\bootloader_data.bin" 0x0800E000
+r
+g
+qc

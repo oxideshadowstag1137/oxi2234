@@ -1,0 +1,7 @@
+// J-Link RTT Viewer Script
+// Connect to STM32F103C8
+device STM32F103C8
+si SWD
+speed 4000
+connect
+exit

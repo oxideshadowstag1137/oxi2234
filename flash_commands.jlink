@@ -1,0 +1,18 @@
+device STM32F103C8
+si SWD
+speed 4000
+connect
+h
+erase
+loadbin "D:\LADI\MSU FIRMWARE\build_output\bootloader.bin", 0x08000000
+loadbin "D:\LADI\MSU FIRMWARE\build_output\firmware_bank_a.bin", 0x08002000
+loadbin "D:\LADI\MSU FIRMWARE\build_output\firmware_bank_b.bin", 0x08008000
+erase 0x0800E000 0x0800EFFF
+loadbin "D:\LADI\MSU FIRMWARE\build_output\bootloader_data.bin", 0x0800E000
+verifybin "D:\LADI\MSU FIRMWARE\build_output\bootloader.bin", 0x08000000
+verifybin "D:\LADI\MSU FIRMWARE\build_output\firmware_bank_a.bin", 0x08002000
+verifybin "D:\LADI\MSU FIRMWARE\build_output\firmware_bank_b.bin", 0x08008000
+verifybin "D:\LADI\MSU FIRMWARE\build_output\bootloader_data.bin", 0x0800E000
+r
+g
+qc

@@ -1,0 +1,18 @@
+// J-Link SWO Viewer Script for STM32F103C8
+// SWO allows printf output through debug interface
+
+device STM32F103C8
+si SWD
+speed 4000
+connect
+
+// Enable SWO output
+// SWO speed should match CPU clock (72MHz for STM32F103C8)
+SWOSpeed 72000000
+
+// Start SWO viewer
+// Channel 0 is typically used for printf
+SWOStart
+
+// Keep connection alive
+exit

@@ -1,0 +1,15 @@
+// J-Link RTT Terminal Script
+// Auto-connect and enable RTT
+
+device STM32F103C8
+si SWD
+speed 4000
+connect
+
+// Enable RTT
+exec EnableRTT = 1
+
+// Keep connection alive - press Ctrl+C to exit
+while 1
+    sleep 100
+end
